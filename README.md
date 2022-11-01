@@ -7,7 +7,7 @@
 <h3 align="center">Bootstrap</h3>
 
 <p align="center">
-  Sleek, intuitive, and powerful front-end framework for faster and easier web development.
+  The Easiest way to add custom styles when using bootstrap.
   <br>
   <a href="https://getbootstrap.com/docs/5.2/"><strong>Explore Bootstrap docs »</strong></a>
   <br>
