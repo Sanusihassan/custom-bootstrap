@@ -2,7 +2,7 @@
 // Form text
 //
 
-.form-text {
+%form-text {
   margin-top: $form-text-margin-top;
   @include font-size($form-text-font-size);
   font-style: $form-text-font-style;

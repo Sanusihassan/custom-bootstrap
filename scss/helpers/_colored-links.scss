@@ -1,5 +1,5 @@
 @each $color, $value in $theme-colors {
-  .link-#{$color} {
+  %link-#{$color} {
     color: $value if($enable-important-utilities, !important, null);
 
     @if $link-shade-percentage != 0 {

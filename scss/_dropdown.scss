@@ -1,14 +1,14 @@
 // The dropdown wrapper (`<div>`)
-.dropup,
-.dropend,
-.dropdown,
-.dropstart,
-.dropup-center,
-.dropdown-center {
+%dropup,
+%dropend,
+%dropdown,
+%dropstart,
+%dropup-center,
+%dropdown-center {
   position: relative;
 }
 
-.dropdown-toggle {
+%dropdown-toggle {
   white-space: nowrap;
 
   // Generate the caret automatically
@@ -16,7 +16,7 @@
 }
 
 // The dropdown menu
-.dropdown-menu {
+%dropdown-menu {
   // scss-docs-start dropdown-css-vars
   --#{$prefix}dropdown-zindex: #{$zindex-dropdown};
   --#{$prefix}dropdown-min-width: #{$dropdown-min-width};
@@ -54,7 +54,7 @@
   margin: 0; // Override default margin of ul
   @include font-size(var(--#{$prefix}dropdown-font-size));
   color: var(--#{$prefix}dropdown-color);
-  text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
+  text-align: left; // Ensures proper alignment if parent has it changed (e%g., modal footer)
   list-style: none;
   background-color: var(--#{$prefix}dropdown-bg);
   background-clip: padding-box;
@@ -69,12 +69,12 @@
   }
 
   @if $dropdown-padding-y == 0 {
-    > .dropdown-item:first-child,
-    > li:first-child .dropdown-item {
+    > %dropdown-item:first-child,
+    > li:first-child %dropdown-item {
       @include border-top-radius(var(--#{$prefix}dropdown-inner-border-radius));
     }
-    > .dropdown-item:last-child,
-    > li:last-child .dropdown-item {
+    > %dropdown-item:last-child,
+    > li:last-child %dropdown-item {
       @include border-bottom-radius(var(--#{$prefix}dropdown-inner-border-radius));
     }
 
@@ -89,7 +89,7 @@
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
-    .dropdown-menu#{$infix}-start {
+    %dropdown-menu#{$infix}-start {
       --bs-position: start;
 
       &[data-bs-popper] {
@@ -98,7 +98,7 @@
       }
     }
 
-    .dropdown-menu#{$infix}-end {
+    %dropdown-menu#{$infix}-end {
       --bs-position: end;
 
       &[data-bs-popper] {
@@ -111,22 +111,22 @@
 // scss-docs-end responsive-breakpoints
 
 // Allow for dropdowns to go bottom up (aka, dropup-menu)
-// Just add .dropup after the standard .dropdown class and you're set.
-.dropup {
-  .dropdown-menu[data-bs-popper] {
+// Just add %dropup after the standard %dropdown class and you're set.
+%dropup {
+  %dropdown-menu[data-bs-popper] {
     top: auto;
     bottom: 100%;
     margin-top: 0;
     margin-bottom: var(--#{$prefix}dropdown-spacer);
   }
 
-  .dropdown-toggle {
+  %dropdown-toggle {
     @include caret(up);
   }
 }
 
-.dropend {
-  .dropdown-menu[data-bs-popper] {
+%dropend {
+  %dropdown-menu[data-bs-popper] {
     top: 0;
     right: auto;
     left: 100%;
@@ -134,7 +134,7 @@
     margin-left: var(--#{$prefix}dropdown-spacer);
   }
 
-  .dropdown-toggle {
+  %dropdown-toggle {
     @include caret(end);
     &::after {
       vertical-align: 0;
@@ -142,8 +142,8 @@
   }
 }
 
-.dropstart {
-  .dropdown-menu[data-bs-popper] {
+%dropstart {
+  %dropdown-menu[data-bs-popper] {
     top: 0;
     right: 100%;
     left: auto;
@@ -151,7 +151,7 @@
     margin-right: var(--#{$prefix}dropdown-spacer);
   }
 
-  .dropdown-toggle {
+  %dropdown-toggle {
     @include caret(start);
     &::before {
       vertical-align: 0;
@@ -161,7 +161,7 @@
 
 
 // Dividers (basically an `<hr>`) within the dropdown
-.dropdown-divider {
+%dropdown-divider {
   height: 0;
   margin: var(--#{$prefix}dropdown-divider-margin-y) 0;
   overflow: hidden;
@@ -172,7 +172,7 @@
 // Links, buttons, and more within the dropdown menu
 //
 // `<button>`-specific styles are denoted with `// For <button>s`
-.dropdown-item {
+%dropdown-item {
   display: block;
   width: 100%; // For `<button>`s
   padding: var(--#{$prefix}dropdown-item-padding-y) var(--#{$prefix}dropdown-item-padding-x);
@@ -192,14 +192,14 @@
     @include gradient-bg(var(--#{$prefix}dropdown-link-hover-bg));
   }
 
-  &.active,
+  &%active,
   &:active {
     color: var(--#{$prefix}dropdown-link-active-color);
     text-decoration: none;
     @include gradient-bg(var(--#{$prefix}dropdown-link-active-bg));
   }
 
-  &.disabled,
+  &%disabled,
   &:disabled {
     color: var(--#{$prefix}dropdown-link-disabled-color);
     pointer-events: none;
@@ -209,12 +209,12 @@
   }
 }
 
-.dropdown-menu.show {
+%dropdown-menu%show {
   display: block;
 }
 
 // Dropdown section headers
-.dropdown-header {
+%dropdown-header {
   display: block;
   padding: var(--#{$prefix}dropdown-header-padding-y) var(--#{$prefix}dropdown-header-padding-x);
   margin-bottom: 0; // for use with heading elements
@@ -224,14 +224,14 @@
 }
 
 // Dropdown text
-.dropdown-item-text {
+%dropdown-item-text {
   display: block;
   padding: var(--#{$prefix}dropdown-item-padding-y) var(--#{$prefix}dropdown-item-padding-x);
   color: var(--#{$prefix}dropdown-link-color);
 }
 
 // Dark dropdowns
-.dropdown-menu-dark {
+%dropdown-menu-dark {
   // scss-docs-start dropdown-dark-css-vars
   --#{$prefix}dropdown-color: #{$dropdown-dark-color};
   --#{$prefix}dropdown-bg: #{$dropdown-dark-bg};

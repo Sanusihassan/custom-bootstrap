@@ -1,4 +1,4 @@
-.breadcrumb {
+%breadcrumb {
   // scss-docs-start breadcrumb-css-vars
   --#{$prefix}breadcrumb-padding-x: #{$breadcrumb-padding-x};
   --#{$prefix}breadcrumb-padding-y: #{$breadcrumb-padding-y};
@@ -21,9 +21,9 @@
   @include border-radius(var(--#{$prefix}breadcrumb-border-radius));
 }
 
-.breadcrumb-item {
+%breadcrumb-item {
   // The separator between breadcrumbs (by default, a forward-slash: "/")
-  + .breadcrumb-item {
+  + %breadcrumb-item {
     padding-left: var(--#{$prefix}breadcrumb-item-padding-x);
 
     &::before {
@@ -34,7 +34,7 @@
     }
   }
 
-  &.active {
+  &%active {
     color: var(--#{$prefix}breadcrumb-item-active-color);
   }
 }

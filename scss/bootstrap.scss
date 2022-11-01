@@ -1,3 +1,6 @@
+/*
+    The idea is to use sass placehoders instead of css classes
+*/
 @import "mixins/banner";
 @include bsBanner("");
 

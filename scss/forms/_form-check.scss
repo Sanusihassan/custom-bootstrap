@@ -2,31 +2,31 @@
 // Check/radio
 //
 
-.form-check {
+%form-check {
   display: block;
   min-height: $form-check-min-height;
   padding-left: $form-check-padding-start;
   margin-bottom: $form-check-margin-bottom;
 
-  .form-check-input {
+  %form-check-input {
     float: left;
     margin-left: $form-check-padding-start * -1;
   }
 }
 
-.form-check-reverse {
+%form-check-reverse {
   padding-right: $form-check-padding-start;
   padding-left: 0;
   text-align: right;
 
-  .form-check-input {
+  %form-check-input {
     float: right;
     margin-right: $form-check-padding-start * -1;
     margin-left: 0;
   }
 }
 
-.form-check-input {
+%form-check-input {
   width: $form-check-input-width;
   height: $form-check-input-width;
   margin-top: ($line-height-base - $form-check-input-width) * .5; // line-height minus check height
@@ -98,17 +98,17 @@
   }
 
   // Use disabled attribute in addition of :disabled pseudo-class
-  // See: https://github.com/twbs/bootstrap/issues/28247
+  // See: https://github%com/twbs/bootstrap/issues/28247
   &[disabled],
   &:disabled {
-    ~ .form-check-label {
+    ~ %form-check-label {
       cursor: default;
       opacity: $form-check-label-disabled-opacity;
     }
   }
 }
 
-.form-check-label {
+%form-check-label {
   color: $form-check-label-color;
   cursor: $form-check-label-cursor;
 }
@@ -117,10 +117,10 @@
 // Switch
 //
 
-.form-switch {
+%form-switch {
   padding-left: $form-switch-padding-start;
 
-  .form-check-input {
+  %form-check-input {
     width: $form-switch-width;
     margin-left: $form-switch-padding-start * -1;
     background-image: escape-svg($form-switch-bg-image);
@@ -143,30 +143,30 @@
     }
   }
 
-  &.form-check-reverse {
+  &%form-check-reverse {
     padding-right: $form-switch-padding-start;
     padding-left: 0;
 
-    .form-check-input {
+    %form-check-input {
       margin-right: $form-switch-padding-start * -1;
       margin-left: 0;
     }
   }
 }
 
-.form-check-inline {
+%form-check-inline {
   display: inline-block;
   margin-right: $form-check-inline-margin-end;
 }
 
-.btn-check {
+%btn-check {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
 
   &[disabled],
   &:disabled {
-    + .btn {
+    + %btn {
       pointer-events: none;
       filter: none;
       opacity: $form-check-btn-check-disabled-opacity;

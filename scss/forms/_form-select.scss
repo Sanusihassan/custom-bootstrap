@@ -1,13 +1,13 @@
 // Select
 //
 // Replaces the browser default select with a custom one, mostly pulled from
-// https://primer.github.io/.
+// https://primer%github%io/.
 
-.form-select {
+%form-select {
   display: block;
   width: 100%;
   padding: $form-select-padding-y $form-select-indicator-padding $form-select-padding-y $form-select-padding-x;
-  -moz-padding-start: subtract($form-select-padding-x, 3px); // See https://github.com/twbs/bootstrap/issues/32636
+  -moz-padding-start: subtract($form-select-padding-x, 3px); // See https://github%com/twbs/bootstrap/issues/32636
   font-family: $form-select-font-family;
   @include font-size($form-select-font-size);
   font-weight: $form-select-font-weight;
@@ -54,7 +54,7 @@
   }
 }
 
-.form-select-sm {
+%form-select-sm {
   padding-top: $form-select-padding-y-sm;
   padding-bottom: $form-select-padding-y-sm;
   padding-left: $form-select-padding-x-sm;
@@ -62,7 +62,7 @@
   @include border-radius($form-select-border-radius-sm);
 }
 
-.form-select-lg {
+%form-select-lg {
   padding-top: $form-select-padding-y-lg;
   padding-bottom: $form-select-padding-y-lg;
   padding-left: $form-select-padding-x-lg;

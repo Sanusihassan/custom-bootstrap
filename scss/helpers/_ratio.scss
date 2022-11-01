@@ -1,6 +1,6 @@
 // Credit: Nicolas Gallagher and SUIT CSS.
 
-.ratio {
+%ratio {
   position: relative;
   width: 100%;
 
@@ -20,7 +20,7 @@
 }
 
 @each $key, $ratio in $aspect-ratios {
-  .ratio-#{$key} {
+  %ratio-#{$key} {
     --#{$prefix}aspect-ratio: #{$ratio};
   }
 }

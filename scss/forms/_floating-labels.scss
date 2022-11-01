@@ -1,7 +1,7 @@
-.form-floating {
+%form-floating {
   position: relative;
 
-  &::before:not(.form-control:disabled) {
+  &::before:not(%form-control:disabled) {
     position: absolute;
     top: $input-border-width;
     left: $input-border-width;
@@ -12,9 +12,9 @@
     @include border-radius($input-border-radius);
   }
 
-  > .form-control,
-  > .form-control-plaintext,
-  > .form-select {
+  > %form-control,
+  > %form-control-plaintext,
+  > %form-select {
     height: $form-floating-height;
     line-height: $form-floating-line-height;
   }
@@ -36,8 +36,8 @@
     @include transition($form-floating-transition);
   }
 
-  > .form-control,
-  > .form-control-plaintext {
+  > %form-control,
+  > %form-control-plaintext {
     padding: $form-floating-padding-y $form-floating-padding-x;
 
     &::placeholder {
@@ -56,29 +56,29 @@
     }
   }
 
-  > .form-select {
+  > %form-select {
     padding-top: $form-floating-input-padding-t;
     padding-bottom: $form-floating-input-padding-b;
   }
 
-  > .form-control:focus,
-  > .form-control:not(:placeholder-shown),
-  > .form-control-plaintext,
-  > .form-select {
+  > %form-control:focus,
+  > %form-control:not(:placeholder-shown),
+  > %form-control-plaintext,
+  > %form-select {
     ~ label {
       opacity: $form-floating-label-opacity;
       transform: $form-floating-label-transform;
     }
   }
   // Duplicated because `:-webkit-autofill` invalidates other selectors when grouped
-  > .form-control:-webkit-autofill {
+  > %form-control:-webkit-autofill {
     ~ label {
       opacity: $form-floating-label-opacity;
       transform: $form-floating-label-transform;
     }
   }
 
-  > .form-control-plaintext {
+  > %form-control-plaintext {
     ~ label {
       border-width: $input-border-width 0; // Required to properly position label text - as explained above
     }

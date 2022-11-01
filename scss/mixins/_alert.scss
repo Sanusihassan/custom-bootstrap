@@ -9,7 +9,7 @@
     background-image: var(--#{$prefix}gradient);
   }
 
-  .alert-link {
+  %alert-link {
     color: var(--#{$prefix}alert-link-color);
   }
 }

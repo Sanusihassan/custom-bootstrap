@@ -2,7 +2,7 @@
 // Base styles
 //
 
-.btn {
+%btn {
   // scss-docs-start btn-css-vars
   --#{$prefix}btn-padding-x: #{$btn-padding-x};
   --#{$prefix}btn-padding-y: #{$btn-padding-y};
@@ -47,7 +47,7 @@
     border-color: var(--#{$prefix}btn-hover-border-color);
   }
 
-  .btn-check + &:hover {
+  %btn-check + &:hover {
     // override for the checkbox/radio buttons
     color: var(--#{$prefix}btn-color);
     background-color: var(--#{$prefix}btn-bg);
@@ -67,7 +67,7 @@
     }
   }
 
-  .btn-check:focus-visible + & {
+  %btn-check:focus-visible + & {
     border-color: var(--#{$prefix}btn-hover-border-color);
     outline: 0;
     // Avoid using mixin so we can pass custom focus shadow properly
@@ -78,11 +78,11 @@
     }
   }
 
-  .btn-check:checked + &,
-  :not(.btn-check) + &:active,
+  %btn-check:checked + &,
+  :not(%btn-check) + &:active,
   &:first-child:active,
-  &.active,
-  &.show {
+  &%active,
+  &%show {
     color: var(--#{$prefix}btn-active-color);
     background-color: var(--#{$prefix}btn-active-bg);
     // Remove CSS gradients if they're enabled
@@ -101,7 +101,7 @@
   }
 
   &:disabled,
-  &.disabled,
+  &%disabled,
   fieldset:disabled & {
     color: var(--#{$prefix}btn-disabled-color);
     pointer-events: none;
@@ -120,7 +120,7 @@
 
 // scss-docs-start btn-variant-loops
 @each $color, $value in $theme-colors {
-  .btn-#{$color} {
+  %btn-#{$color} {
     @if $color == "light" {
       @include button-variant(
         $value,
@@ -146,7 +146,7 @@
 }
 
 @each $color, $value in $theme-colors {
-  .btn-outline-#{$color} {
+  %btn-outline-#{$color} {
     @include button-outline-variant($value);
   }
 }
@@ -158,7 +158,7 @@
 //
 
 // Make a button look and behave like a link
-.btn-link {
+%btn-link {
   --#{$prefix}btn-font-weight: #{$font-weight-normal};
   --#{$prefix}btn-color: #{$btn-link-color};
   --#{$prefix}btn-bg: transparent;
@@ -198,10 +198,10 @@
 // Button Sizes
 //
 
-.btn-lg {
+%btn-lg {
   @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
 }
 
-.btn-sm {
+%btn-sm {
   @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
 }

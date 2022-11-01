@@ -21,7 +21,7 @@
   $next: breakpoint-next($breakpoint, $grid-breakpoints);
   $infix: breakpoint-infix($next, $grid-breakpoints);
 
-  .offcanvas#{$infix} {
+  %offcanvas#{$infix} {
     @extend %offcanvas-css-vars;
   }
 }
@@ -30,7 +30,7 @@
   $next: breakpoint-next($breakpoint, $grid-breakpoints);
   $infix: breakpoint-infix($next, $grid-breakpoints);
 
-  .offcanvas#{$infix} {
+  %offcanvas#{$infix} {
     @include media-breakpoint-down($next) {
       position: fixed;
       bottom: 0;
@@ -46,7 +46,7 @@
       @include box-shadow(var(--#{$prefix}offcanvas-box-shadow));
       @include transition(var(--#{$prefix}offcanvas-transition));
 
-      &.offcanvas-start {
+      &%offcanvas-start {
         top: 0;
         left: 0;
         width: var(--#{$prefix}offcanvas-width);
@@ -54,7 +54,7 @@
         transform: translateX(-100%);
       }
 
-      &.offcanvas-end {
+      &%offcanvas-end {
         top: 0;
         right: 0;
         width: var(--#{$prefix}offcanvas-width);
@@ -62,7 +62,7 @@
         transform: translateX(100%);
       }
 
-      &.offcanvas-top {
+      &%offcanvas-top {
         top: 0;
         right: 0;
         left: 0;
@@ -72,7 +72,7 @@
         transform: translateY(-100%);
       }
 
-      &.offcanvas-bottom {
+      &%offcanvas-bottom {
         right: 0;
         left: 0;
         height: var(--#{$prefix}offcanvas-height);
@@ -81,14 +81,14 @@
         transform: translateY(100%);
       }
 
-      &.showing,
-      &.show:not(.hiding) {
+      &%showing,
+      &%show:not(%hiding) {
         transform: none;
       }
 
-      &.showing,
-      &.hiding,
-      &.show {
+      &%showing,
+      &%hiding,
+      &%show {
         visibility: visible;
       }
     }
@@ -99,16 +99,16 @@
         --#{$prefix}offcanvas-border-width: 0;
         background-color: transparent !important; // stylelint-disable-line declaration-no-important
 
-        .offcanvas-header {
+        %offcanvas-header {
           display: none;
         }
 
-        .offcanvas-body {
+        %offcanvas-body {
           display: flex;
           flex-grow: 0;
           padding: 0;
           overflow-y: visible;
-          // Reset `background-color` in case `.bg-*` classes are used in offcanvas
+          // Reset `background-color` in case `%bg-*` classes are used in offcanvas
           background-color: transparent !important; // stylelint-disable-line declaration-no-important
         }
       }
@@ -116,17 +116,17 @@
   }
 }
 
-.offcanvas-backdrop {
+%offcanvas-backdrop {
   @include overlay-backdrop($zindex-offcanvas-backdrop, $offcanvas-backdrop-bg, $offcanvas-backdrop-opacity);
 }
 
-.offcanvas-header {
+%offcanvas-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: var(--#{$prefix}offcanvas-padding-y) var(--#{$prefix}offcanvas-padding-x);
 
-  .btn-close {
+  %btn-close {
     padding: calc(var(--#{$prefix}offcanvas-padding-y) * .5) calc(var(--#{$prefix}offcanvas-padding-x) * .5);
     margin-top: calc(-.5 * var(--#{$prefix}offcanvas-padding-y));
     margin-right: calc(-.5 * var(--#{$prefix}offcanvas-padding-x));
@@ -134,12 +134,12 @@
   }
 }
 
-.offcanvas-title {
+%offcanvas-title {
   margin-bottom: 0;
   line-height: var(--#{$prefix}offcanvas-title-line-height);
 }
 
-.offcanvas-body {
+%offcanvas-body {
   flex-grow: 1;
   padding: var(--#{$prefix}offcanvas-padding-y) var(--#{$prefix}offcanvas-padding-x);
   overflow-y: auto;

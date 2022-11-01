@@ -1,6 +1,6 @@
 // Shorthand
 
-.fixed-top {
+%fixed-top {
   position: fixed;
   top: 0;
   right: 0;
@@ -8,7 +8,7 @@
   z-index: $zindex-fixed;
 }
 
-.fixed-bottom {
+%fixed-bottom {
   position: fixed;
   right: 0;
   bottom: 0;
@@ -21,13 +21,13 @@
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
-    .sticky#{$infix}-top {
+    %sticky#{$infix}-top {
       position: sticky;
       top: 0;
       z-index: $zindex-sticky;
     }
 
-    .sticky#{$infix}-bottom {
+    %sticky#{$infix}-bottom {
       position: sticky;
       bottom: 0;
       z-index: $zindex-sticky;

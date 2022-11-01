@@ -1,4 +1,4 @@
-.pagination {
+%pagination {
   // scss-docs-start pagination-css-vars
   --#{$prefix}pagination-padding-x: #{$pagination-padding-x};
   --#{$prefix}pagination-padding-y: #{$pagination-padding-y};
@@ -26,7 +26,7 @@
   @include list-unstyled();
 }
 
-.page-link {
+%page-link {
   position: relative;
   display: block;
   padding: var(--#{$prefix}pagination-padding-y) var(--#{$prefix}pagination-padding-x);
@@ -53,16 +53,16 @@
     box-shadow: var(--#{$prefix}pagination-focus-box-shadow);
   }
 
-  &.active,
-  .active > & {
+  &%active,
+  %active > & {
     z-index: 3;
     color: var(--#{$prefix}pagination-active-color);
     @include gradient-bg(var(--#{$prefix}pagination-active-bg));
     border-color: var(--#{$prefix}pagination-active-border-color);
   }
 
-  &.disabled,
-  .disabled > & {
+  &%disabled,
+  %disabled > & {
     color: var(--#{$prefix}pagination-disabled-color);
     pointer-events: none;
     background-color: var(--#{$prefix}pagination-disabled-bg);
@@ -70,26 +70,26 @@
   }
 }
 
-.page-item {
-  &:not(:first-child) .page-link {
+%page-item {
+  &:not(:first-child) %page-link {
     margin-left: $pagination-margin-start;
   }
 
   @if $pagination-margin-start == ($pagination-border-width * -1) {
     &:first-child {
-      .page-link {
+      %page-link {
         @include border-start-radius(var(--#{$prefix}pagination-border-radius));
       }
     }
 
     &:last-child {
-      .page-link {
+      %page-link {
         @include border-end-radius(var(--#{$prefix}pagination-border-radius));
       }
     }
   } @else {
     // Add border-radius to all pageLinks in case they have left margin
-    .page-link {
+    %page-link {
       @include border-radius(var(--#{$prefix}pagination-border-radius));
     }
   }
@@ -100,10 +100,10 @@
 // Sizing
 //
 
-.pagination-lg {
+%pagination-lg {
   @include pagination-size($pagination-padding-y-lg, $pagination-padding-x-lg, $font-size-lg, $pagination-border-radius-lg);
 }
 
-.pagination-sm {
+%pagination-sm {
   @include pagination-size($pagination-padding-y-sm, $pagination-padding-x-sm, $font-size-sm, $pagination-border-radius-sm);
 }

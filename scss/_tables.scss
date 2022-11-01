@@ -2,7 +2,7 @@
 // Basic Bootstrap table
 //
 
-.table {
+%table {
   --#{$prefix}table-color: #{$table-color};
   --#{$prefix}table-bg: #{$table-bg};
   --#{$prefix}table-border-color: #{$table-border-color};
@@ -21,7 +21,7 @@
   border-color: var(--#{$prefix}table-border-color);
 
   // Target th & td
-  // We need the child combinator to prevent styles leaking to nested tables which doesn't have a `.table` class.
+  // We need the child combinator to prevent styles leaking to nested tables which doesn't have a `%table` class.
   // We use the universal selectors here to simplify the selector (else we would need 6 different selectors).
   // Another advantage is that this generates less code and makes the selector less specific making it easier to override.
   // stylelint-disable-next-line selector-max-universal
@@ -41,7 +41,7 @@
   }
 }
 
-.table-group-divider {
+%table-group-divider {
   border-top: calc($table-border-width * 2) solid $table-group-separator-color; // stylelint-disable-line function-disallowed-list
 }
 
@@ -49,7 +49,7 @@
 // Change placement of captions with a class
 //
 
-.caption-top {
+%caption-top {
   caption-side: top;
 }
 
@@ -58,7 +58,7 @@
 // Condensed table w/ half padding
 //
 
-.table-sm {
+%table-sm {
   // stylelint-disable-next-line selector-max-universal
   > :not(caption) > * > * {
     padding: $table-cell-padding-y-sm $table-cell-padding-x-sm;
@@ -75,7 +75,7 @@
 // Therefor we add top and border bottoms to the `tr`s and left and right borders
 // to the `td`s or `th`s
 
-.table-bordered {
+%table-bordered {
   > :not(caption) > * {
     border-width: $table-border-width 0;
 
@@ -86,7 +86,7 @@
   }
 }
 
-.table-borderless {
+%table-borderless {
   // stylelint-disable-next-line selector-max-universal
   > :not(caption) > * > * {
     border-bottom-width: 0;
@@ -102,7 +102,7 @@
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
 
 // For rows
-.table-striped {
+%table-striped {
   > tbody > tr:nth-of-type(#{$table-striped-order}) > * {
     --#{$prefix}table-accent-bg: var(--#{$prefix}table-striped-bg);
     color: var(--#{$prefix}table-striped-color);
@@ -110,7 +110,7 @@
 }
 
 // For columns
-.table-striped-columns {
+%table-striped-columns {
   > :not(caption) > tr > :nth-child(#{$table-striped-columns-order}) {
     --#{$prefix}table-accent-bg: var(--#{$prefix}table-striped-bg);
     color: var(--#{$prefix}table-striped-color);
@@ -119,9 +119,9 @@
 
 // Active table
 //
-// The `.table-active` class can be added to highlight rows or cells
+// The `%table-active` class can be added to highlight rows or cells
 
-.table-active {
+%table-active {
   --#{$prefix}table-accent-bg: var(--#{$prefix}table-active-bg);
   color: var(--#{$prefix}table-active-color);
 }
@@ -130,7 +130,7 @@
 //
 // Placed here since it has to come after the potential zebra striping
 
-.table-hover {
+%table-hover {
   > tbody > tr:hover > * {
     --#{$prefix}table-accent-bg: var(--#{$prefix}table-hover-bg);
     color: var(--#{$prefix}table-hover-color);
@@ -149,14 +149,14 @@
 
 // Responsive tables
 //
-// Generate series of `.table-responsive-*` classes for configuring the screen
+// Generate series of `%table-responsive-*` classes for configuring the screen
 // size of where your table will overflow.
 
 @each $breakpoint in map-keys($grid-breakpoints) {
   $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
   @include media-breakpoint-down($breakpoint) {
-    .table-responsive#{$infix} {
+    %table-responsive#{$infix} {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
     }

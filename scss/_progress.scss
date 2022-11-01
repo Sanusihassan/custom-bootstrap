@@ -8,7 +8,7 @@
 }
 // scss-docs-end progress-keyframes
 
-.progress {
+%progress {
   // scss-docs-start progress-css-vars
   --#{$prefix}progress-height: #{$progress-height};
   @include rfs($progress-font-size, --#{$prefix}progress-font-size);
@@ -29,7 +29,7 @@
   @include box-shadow(var(--#{$prefix}progress-box-shadow));
 }
 
-.progress-bar {
+%progress-bar {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,13 +41,13 @@
   @include transition(var(--#{$prefix}progress-bar-transition));
 }
 
-.progress-bar-striped {
+%progress-bar-striped {
   @include gradient-striped();
   background-size: var(--#{$prefix}progress-height) var(--#{$prefix}progress-height);
 }
 
 @if $enable-transitions {
-  .progress-bar-animated {
+  %progress-bar-animated {
     animation: $progress-bar-animation-timing progress-bar-stripes;
 
     @if $enable-reduced-motion {

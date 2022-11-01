@@ -1,4 +1,4 @@
-.toast {
+%toast {
   // scss-docs-start toast-css-vars
   --#{$prefix}toast-zindex: #{$zindex-toast};
   --#{$prefix}toast-padding-x: #{$toast-padding-x};
@@ -28,16 +28,16 @@
   box-shadow: var(--#{$prefix}toast-box-shadow);
   @include border-radius(var(--#{$prefix}toast-border-radius));
 
-  &.showing {
+  &%showing {
     opacity: 0;
   }
 
-  &:not(.show) {
+  &:not(%show) {
     display: none;
   }
 }
 
-.toast-container {
+%toast-container {
   --#{$prefix}toast-zindex: #{$zindex-toast};
 
   position: absolute;
@@ -51,7 +51,7 @@
   }
 }
 
-.toast-header {
+%toast-header {
   display: flex;
   align-items: center;
   padding: var(--#{$prefix}toast-padding-y) var(--#{$prefix}toast-padding-x);
@@ -61,13 +61,13 @@
   border-bottom: var(--#{$prefix}toast-border-width) solid var(--#{$prefix}toast-header-border-color);
   @include border-top-radius(calc(var(--#{$prefix}toast-border-radius) - var(--#{$prefix}toast-border-width)));
 
-  .btn-close {
+  %btn-close {
     margin-right: calc(-.5 * var(--#{$prefix}toast-padding-x)); // stylelint-disable-line function-disallowed-list
     margin-left: var(--#{$prefix}toast-padding-x);
   }
 }
 
-.toast-body {
+%toast-body {
   padding: var(--#{$prefix}toast-padding-x);
   word-wrap: break-word;
 }

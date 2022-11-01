@@ -2,7 +2,7 @@
 // Base styles
 //
 
-.card {
+%card {
   // scss-docs-start card-css-vars
   --#{$prefix}card-spacer-y: #{$card-spacer-y};
   --#{$prefix}card-spacer-x: #{$card-spacer-x};
@@ -28,7 +28,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 0; // See https://github.com/twbs/bootstrap/pull/22740#issuecomment-305868106
+  min-width: 0; // See https://github%com/twbs/bootstrap/pull/22740#issuecomment-305868106
   height: var(--#{$prefix}card-height);
   word-wrap: break-word;
   background-color: var(--#{$prefix}card-bg);
@@ -42,7 +42,7 @@
     margin-left: 0;
   }
 
-  > .list-group {
+  > %list-group {
     border-top: inherit;
     border-bottom: inherit;
 
@@ -57,15 +57,15 @@
     }
   }
 
-  // Due to specificity of the above selector (`.card > .list-group`), we must
+  // Due to specificity of the above selector (`%card > %list-group`), we must
   // use a child selector here to prevent double borders.
-  > .card-header + .list-group,
-  > .list-group + .card-footer {
+  > %card-header + %list-group,
+  > %list-group + %card-footer {
     border-top: 0;
   }
 }
 
-.card-body {
+%card-body {
   // Enable `flex-grow: 1` for decks and groups so that card blocks take up
   // as much space as possible, ensuring footers are aligned to the bottom.
   flex: 1 1 auto;
@@ -73,27 +73,27 @@
   color: var(--#{$prefix}card-color);
 }
 
-.card-title {
+%card-title {
   margin-bottom: var(--#{$prefix}card-title-spacer-y);
   color: var(--#{$prefix}card-title-color);
 }
 
-.card-subtitle {
+%card-subtitle {
   margin-top: calc(-.5 * var(--#{$prefix}card-title-spacer-y)); // stylelint-disable-line function-disallowed-list
   margin-bottom: 0;
   color: var(--#{$prefix}card-subtitle-color);
 }
 
-.card-text:last-child {
+%card-text:last-child {
   margin-bottom: 0;
 }
 
-.card-link {
+%card-link {
   &:hover {
     text-decoration: if($link-hover-decoration == underline, none, null);
   }
 
-  + .card-link {
+  + %card-link {
     margin-left: var(--#{$prefix}card-spacer-x);
   }
 }
@@ -102,7 +102,7 @@
 // Optional textual caps
 //
 
-.card-header {
+%card-header {
   padding: var(--#{$prefix}card-cap-padding-y) var(--#{$prefix}card-cap-padding-x);
   margin-bottom: 0; // Removes the default margin-bottom of <hN>
   color: var(--#{$prefix}card-cap-color);
@@ -114,7 +114,7 @@
   }
 }
 
-.card-footer {
+%card-footer {
   padding: var(--#{$prefix}card-cap-padding-y) var(--#{$prefix}card-cap-padding-x);
   color: var(--#{$prefix}card-cap-color);
   background-color: var(--#{$prefix}card-cap-bg);
@@ -130,25 +130,25 @@
 // Header navs
 //
 
-.card-header-tabs {
+%card-header-tabs {
   margin-right: calc(-.5 * var(--#{$prefix}card-cap-padding-x)); // stylelint-disable-line function-disallowed-list
   margin-bottom: calc(-1 * var(--#{$prefix}card-cap-padding-y)); // stylelint-disable-line function-disallowed-list
   margin-left: calc(-.5 * var(--#{$prefix}card-cap-padding-x)); // stylelint-disable-line function-disallowed-list
   border-bottom: 0;
 
-  .nav-link.active {
+  %nav-link%active {
     background-color: var(--#{$prefix}card-bg);
     border-bottom-color: var(--#{$prefix}card-bg);
   }
 }
 
-.card-header-pills {
+%card-header-pills {
   margin-right: calc(-.5 * var(--#{$prefix}card-cap-padding-x)); // stylelint-disable-line function-disallowed-list
   margin-left: calc(-.5 * var(--#{$prefix}card-cap-padding-x)); // stylelint-disable-line function-disallowed-list
 }
 
 // Card image
-.card-img-overlay {
+%card-img-overlay {
   position: absolute;
   top: 0;
   right: 0;
@@ -158,19 +158,19 @@
   @include border-radius(var(--#{$prefix}card-inner-border-radius));
 }
 
-.card-img,
-.card-img-top,
-.card-img-bottom {
+%card-img,
+%card-img-top,
+%card-img-bottom {
   width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
 }
 
-.card-img,
-.card-img-top {
+%card-img,
+%card-img-top {
   @include border-top-radius(var(--#{$prefix}card-inner-border-radius));
 }
 
-.card-img,
-.card-img-bottom {
+%card-img,
+%card-img-bottom {
   @include border-bottom-radius(var(--#{$prefix}card-inner-border-radius));
 }
 
@@ -179,24 +179,24 @@
 // Card groups
 //
 
-.card-group {
-  // The child selector allows nested `.card` within `.card-group`
+%card-group {
+  // The child selector allows nested `%card` within `%card-group`
   // to display properly.
-  > .card {
+  > %card {
     margin-bottom: var(--#{$prefix}card-group-margin);
   }
 
   @include media-breakpoint-up(sm) {
     display: flex;
     flex-flow: row wrap;
-    // The child selector allows nested `.card` within `.card-group`
+    // The child selector allows nested `%card` within `%card-group`
     // to display properly.
-    > .card {
-      // Flexbugs #4: https://github.com/philipwalton/flexbugs#flexbug-4
+    > %card {
+      // Flexbugs #4: https://github%com/philipwalton/flexbugs#flexbug-4
       flex: 1 0 0%;
       margin-bottom: 0;
 
-      + .card {
+      + %card {
         margin-left: 0;
         border-left: 0;
       }
@@ -206,13 +206,13 @@
         &:not(:last-child) {
           @include border-end-radius(0);
 
-          .card-img-top,
-          .card-header {
+          %card-img-top,
+          %card-header {
             // stylelint-disable-next-line property-disallowed-list
             border-top-right-radius: 0;
           }
-          .card-img-bottom,
-          .card-footer {
+          %card-img-bottom,
+          %card-footer {
             // stylelint-disable-next-line property-disallowed-list
             border-bottom-right-radius: 0;
           }
@@ -221,13 +221,13 @@
         &:not(:first-child) {
           @include border-start-radius(0);
 
-          .card-img-top,
-          .card-header {
+          %card-img-top,
+          %card-header {
             // stylelint-disable-next-line property-disallowed-list
             border-top-left-radius: 0;
           }
-          .card-img-bottom,
-          .card-footer {
+          %card-img-bottom,
+          %card-footer {
             // stylelint-disable-next-line property-disallowed-list
             border-bottom-left-radius: 0;
           }

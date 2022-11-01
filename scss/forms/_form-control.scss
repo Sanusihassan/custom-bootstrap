@@ -2,7 +2,7 @@
 // General form controls (plus a few specific high-level interventions)
 //
 
-.form-control {
+%form-control {
   display: block;
   width: 100%;
   padding: $input-padding-y $input-padding-x;
@@ -45,15 +45,15 @@
   }
 
   // Add some height to date inputs on iOS
-  // https://github.com/twbs/bootstrap/issues/23307
-  // TODO: we can remove this workaround once https://bugs.webkit.org/show_bug.cgi?id=198959 is resolved
+  // https://github%com/twbs/bootstrap/issues/23307
+  // TODO: we can remove this workaround once https://bugs%webkit%org/show_bug%cgi?id=198959 is resolved
   &::-webkit-date-and-time-value {
     // Multiply line-height by 1em if it has no unit
     height: if(unit($input-line-height) == "", $input-line-height * 1em, $input-line-height);
   }
 
   // Prevent excessive date input height in Webkit
-  // https://github.com/twbs/bootstrap/issues/34433
+  // https://github%com/twbs/bootstrap/issues/34433
   &::-webkit-datetime-edit {
     display: block;
     padding: 0;
@@ -62,7 +62,7 @@
   // Placeholder
   &::placeholder {
     color: $input-placeholder-color;
-    // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+    // Override Firefox's unusual default opacity; see https://github%com/twbs/bootstrap/pull/11526.
     opacity: 1;
   }
 
@@ -75,7 +75,7 @@
     color: $input-disabled-color;
     background-color: $input-disabled-bg;
     border-color: $input-disabled-border-color;
-    // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+    // iOS fix for unreadable disabled content; see https://github%com/twbs/bootstrap/issues/11655.
     opacity: 1;
   }
 
@@ -105,7 +105,7 @@
 // Apply class to a readonly input to make it appear like regular plain
 // text (without any border, background color, focus indicator)
 
-.form-control-plaintext {
+%form-control-plaintext {
   display: block;
   width: 100%;
   padding: $input-padding-y 0;
@@ -120,8 +120,8 @@
     outline: 0;
   }
 
-  &.form-control-sm,
-  &.form-control-lg {
+  &%form-control-sm,
+  &%form-control-lg {
     padding-right: 0;
     padding-left: 0;
   }
@@ -129,12 +129,12 @@
 
 // Form control sizing
 //
-// Build on `.form-control` with modifier classes to decrease or increase the
+// Build on `%form-control` with modifier classes to decrease or increase the
 // height and font-size of form controls.
 //
-// Repeated in `_input_group.scss` to avoid Sass extend issues.
+// Repeated in `_input_group%scss` to avoid Sass extend issues.
 
-.form-control-sm {
+%form-control-sm {
   min-height: $input-height-sm;
   padding: $input-padding-y-sm $input-padding-x-sm;
   @include font-size($input-font-size-sm);
@@ -147,7 +147,7 @@
   }
 }
 
-.form-control-lg {
+%form-control-lg {
   min-height: $input-height-lg;
   padding: $input-padding-y-lg $input-padding-x-lg;
   @include font-size($input-font-size-lg);
@@ -161,24 +161,24 @@
 }
 
 // Make sure textareas don't shrink too much when resized
-// https://github.com/twbs/bootstrap/pull/29124
+// https://github%com/twbs/bootstrap/pull/29124
 // stylelint-disable selector-no-qualifying-type
 textarea {
-  &.form-control {
+  &%form-control {
     min-height: $input-height;
   }
 
-  &.form-control-sm {
+  &%form-control-sm {
     min-height: $input-height-sm;
   }
 
-  &.form-control-lg {
+  &%form-control-lg {
     min-height: $input-height-lg;
   }
 }
 // stylelint-enable selector-no-qualifying-type
 
-.form-control-color {
+%form-control-color {
   width: $form-color-width;
   height: $input-height;
   padding: $input-padding-y;
@@ -196,6 +196,6 @@ textarea {
     @include border-radius($input-border-radius);
   }
 
-  &.form-control-sm { height: $input-height-sm; }
-  &.form-control-lg { height: $input-height-lg; }
+  &%form-control-sm { height: $input-height-sm; }
+  &%form-control-lg { height: $input-height-lg; }
 }

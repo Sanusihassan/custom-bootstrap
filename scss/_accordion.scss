@@ -2,7 +2,7 @@
 // Base styles
 //
 
-.accordion {
+%accordion {
   // scss-docs-start accordion-css-vars
   --#{$prefix}accordion-color: #{$accordion-color};
   --#{$prefix}accordion-bg: #{$accordion-bg};
@@ -29,7 +29,7 @@
   // scss-docs-end accordion-css-vars
 }
 
-.accordion-button {
+%accordion-button {
   position: relative;
   display: flex;
   align-items: center;
@@ -44,7 +44,7 @@
   overflow-anchor: none;
   @include transition(var(--#{$prefix}accordion-transition));
 
-  &:not(.collapsed) {
+  &:not(%collapsed) {
     color: var(--#{$prefix}accordion-active-color);
     background-color: var(--#{$prefix}accordion-active-bg);
     box-shadow: inset 0 calc(-1 * var(--#{$prefix}accordion-border-width)) 0 var(--#{$prefix}accordion-border-color); // stylelint-disable-line function-disallowed-list
@@ -80,11 +80,11 @@
   }
 }
 
-.accordion-header {
+%accordion-header {
   margin-bottom: 0;
 }
 
-.accordion-item {
+%accordion-item {
   color: var(--#{$prefix}accordion-color);
   background-color: var(--#{$prefix}accordion-bg);
   border: var(--#{$prefix}accordion-border-width) solid var(--#{$prefix}accordion-border-color);
@@ -92,7 +92,7 @@
   &:first-of-type {
     @include border-top-radius(var(--#{$prefix}accordion-border-radius));
 
-    .accordion-button {
+    %accordion-button {
       @include border-top-radius(var(--#{$prefix}accordion-inner-border-radius));
     }
   }
@@ -105,19 +105,19 @@
   &:last-of-type {
     @include border-bottom-radius(var(--#{$prefix}accordion-border-radius));
 
-    .accordion-button {
-      &.collapsed {
+    %accordion-button {
+      &%collapsed {
         @include border-bottom-radius(var(--#{$prefix}accordion-inner-border-radius));
       }
     }
 
-    .accordion-collapse {
+    %accordion-collapse {
       @include border-bottom-radius(var(--#{$prefix}accordion-border-radius));
     }
   }
 }
 
-.accordion-body {
+%accordion-body {
   padding: var(--#{$prefix}accordion-body-padding-y) var(--#{$prefix}accordion-body-padding-x);
 }
 
@@ -126,12 +126,12 @@
 //
 // Remove borders and border-radius to keep accordion items edge-to-edge.
 
-.accordion-flush {
-  .accordion-collapse {
+%accordion-flush {
+  %accordion-collapse {
     border-width: 0;
   }
 
-  .accordion-item {
+  %accordion-item {
     border-right: 0;
     border-left: 0;
     @include border-radius(0);
@@ -139,9 +139,9 @@
     &:first-child { border-top: 0; }
     &:last-child { border-bottom: 0; }
 
-    .accordion-button {
+    %accordion-button {
       &,
-      &.collapsed {
+      &%collapsed {
         @include border-radius(0);
       }
     }

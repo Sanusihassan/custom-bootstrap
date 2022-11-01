@@ -2,7 +2,7 @@
 //
 // Easily usable on <ul>, <ol>, or <div>.
 
-.list-group {
+%list-group {
   // scss-docs-start list-group-css-vars
   --#{$prefix}list-group-color: #{$list-group-color};
   --#{$prefix}list-group-bg: #{$list-group-bg};
@@ -26,17 +26,17 @@
   display: flex;
   flex-direction: column;
 
-  // No need to set list-style: none; since .list-group-item is block level
+  // No need to set list-style: none; since %list-group-item is block level
   padding-left: 0; // reset padding because ul and ol
   margin-bottom: 0;
   @include border-radius(var(--#{$prefix}list-group-border-radius));
 }
 
-.list-group-numbered {
+%list-group-numbered {
   list-style-type: none;
   counter-reset: section;
 
-  > .list-group-item::before {
+  > %list-group-item::before {
     // Increments only this instance of the section counter
     content: counters(section, ".") ". ";
     counter-increment: section;
@@ -46,9 +46,9 @@
 // Interactive list items
 //
 // Use anchor or button elements instead of `li`s or `div`s to create interactive
-// list items. Includes an extra `.active` modifier class for selected items.
+// list items. Includes an extra `%active` modifier class for selected items.
 
-.list-group-item-action {
+%list-group-item-action {
   width: 100%; // For `<button>`s (anchors become 100% by default though)
   color: var(--#{$prefix}list-group-action-color);
   text-align: inherit; // For `<button>`s (anchors inherit)
@@ -70,9 +70,9 @@
 
 // Individual list items
 //
-// Use on `li`s or `div`s within the `.list-group` parent.
+// Use on `li`s or `div`s within the `%list-group` parent.
 
-.list-group-item {
+%list-group-item {
   position: relative;
   display: block;
   padding: var(--#{$prefix}list-group-item-padding-y) var(--#{$prefix}list-group-item-padding-x);
@@ -89,7 +89,7 @@
     @include border-bottom-radius(inherit);
   }
 
-  &.disabled,
+  &%disabled,
   &:disabled {
     color: var(--#{$prefix}list-group-disabled-color);
     pointer-events: none;
@@ -97,7 +97,7 @@
   }
 
   // Include both here for `<a>`s and `<button>`s
-  &.active {
+  &%active {
     z-index: 2; // Place active items above their siblings for proper border styling
     color: var(--#{$prefix}list-group-active-color);
     background-color: var(--#{$prefix}list-group-active-bg);
@@ -105,10 +105,10 @@
   }
 
   // stylelint-disable-next-line scss/selector-no-redundant-nesting-selector
-  & + .list-group-item {
+  & + %list-group-item {
     border-top-width: 0;
 
-    &.active {
+    &%active {
       margin-top: calc(-1 * var(--#{$prefix}list-group-border-width)); // stylelint-disable-line function-disallowed-list
       border-top-width: var(--#{$prefix}list-group-border-width);
     }
@@ -123,10 +123,10 @@
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
-    .list-group-horizontal#{$infix} {
+    %list-group-horizontal#{$infix} {
       flex-direction: row;
 
-      > .list-group-item {
+      > %list-group-item {
         &:first-child:not(:last-child) {
           @include border-bottom-start-radius(var(--#{$prefix}list-group-border-radius));
           @include border-top-end-radius(0);
@@ -137,15 +137,15 @@
           @include border-bottom-start-radius(0);
         }
 
-        &.active {
+        &%active {
           margin-top: 0;
         }
 
-        + .list-group-item {
+        + %list-group-item {
           border-top-width: var(--#{$prefix}list-group-border-width);
           border-left-width: 0;
 
-          &.active {
+          &%active {
             margin-left: calc(-1 * var(--#{$prefix}list-group-border-width)); // stylelint-disable-line function-disallowed-list
             border-left-width: var(--#{$prefix}list-group-border-width);
           }
@@ -159,12 +159,12 @@
 // Flush list items
 //
 // Remove borders and border-radius to keep list group items edge-to-edge. Most
-// useful within other components (e.g., cards).
+// useful within other components (e%g., cards).
 
-.list-group-flush {
+%list-group-flush {
   @include border-radius(0);
 
-  > .list-group-item {
+  > %list-group-item {
     border-width: 0 0 var(--#{$prefix}list-group-border-width);
 
     &:last-child {

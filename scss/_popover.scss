@@ -1,4 +1,4 @@
-.popover {
+%popover {
   // scss-docs-start popover-css-vars
   --#{$prefix}popover-zindex: #{$zindex-popover};
   --#{$prefix}popover-max-width: #{$popover-max-width};
@@ -37,7 +37,7 @@
   @include border-radius(var(--#{$prefix}popover-border-radius));
   @include box-shadow(var(--#{$prefix}popover-box-shadow));
 
-  .popover-arrow {
+  %popover-arrow {
     display: block;
     width: var(--#{$prefix}popover-arrow-width);
     height: var(--#{$prefix}popover-arrow-height);
@@ -54,8 +54,8 @@
   }
 }
 
-.bs-popover-top {
-  > .popover-arrow {
+%bs-popover-top {
+  > %popover-arrow {
     bottom: calc(-1 * (var(--#{$prefix}popover-arrow-height)) - var(--#{$prefix}popover-border-width)); // stylelint-disable-line function-disallowed-list
 
     &::before,
@@ -76,8 +76,8 @@
 }
 
 /* rtl:begin:ignore */
-.bs-popover-end {
-  > .popover-arrow {
+%bs-popover-end {
+  > %popover-arrow {
     left: calc(-1 * (var(--#{$prefix}popover-arrow-height)) - var(--#{$prefix}popover-border-width)); // stylelint-disable-line function-disallowed-list
     width: var(--#{$prefix}popover-arrow-height);
     height: var(--#{$prefix}popover-arrow-width);
@@ -101,8 +101,8 @@
 
 /* rtl:end:ignore */
 
-.bs-popover-bottom {
-  > .popover-arrow {
+%bs-popover-bottom {
+  > %popover-arrow {
     top: calc(-1 * (var(--#{$prefix}popover-arrow-height)) - var(--#{$prefix}popover-border-width)); // stylelint-disable-line function-disallowed-list
 
     &::before,
@@ -122,7 +122,7 @@
   }
 
   // This will remove the popover-header's border just below the arrow
-  .popover-header::before {
+  %popover-header::before {
     position: absolute;
     top: 0;
     left: 50%;
@@ -135,8 +135,8 @@
 }
 
 /* rtl:begin:ignore */
-.bs-popover-start {
-  > .popover-arrow {
+%bs-popover-start {
+  > %popover-arrow {
     right: calc(-1 * (var(--#{$prefix}popover-arrow-height)) - var(--#{$prefix}popover-border-width)); // stylelint-disable-line function-disallowed-list
     width: var(--#{$prefix}popover-arrow-height);
     height: var(--#{$prefix}popover-arrow-width);
@@ -160,23 +160,23 @@
 
 /* rtl:end:ignore */
 
-.bs-popover-auto {
+%bs-popover-auto {
   &[data-popper-placement^="top"] {
-    @extend .bs-popover-top;
+    @extend %bs-popover-top;
   }
   &[data-popper-placement^="right"] {
-    @extend .bs-popover-end;
+    @extend %bs-popover-end;
   }
   &[data-popper-placement^="bottom"] {
-    @extend .bs-popover-bottom;
+    @extend %bs-popover-bottom;
   }
   &[data-popper-placement^="left"] {
-    @extend .bs-popover-start;
+    @extend %bs-popover-start;
   }
 }
 
 // Offset the popover to account for the popover arrow
-.popover-header {
+%popover-header {
   padding: var(--#{$prefix}popover-header-padding-y) var(--#{$prefix}popover-header-padding-x);
   margin-bottom: 0; // Reset the default from Reboot
   @include font-size(var(--#{$prefix}popover-header-font-size));
@@ -190,7 +190,7 @@
   }
 }
 
-.popover-body {
+%popover-body {
   padding: var(--#{$prefix}popover-body-padding-y) var(--#{$prefix}popover-body-padding-x);
   color: var(--#{$prefix}popover-body-color);
 }
