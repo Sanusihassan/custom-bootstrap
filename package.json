@@ -1,9 +1,9 @@
 {
   "name": "bootstrap",
   "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
-  "version": "5.2.2",
+  "version": "1.0.0",
   "config": {
-    "version_short": "5.2"
+    "version_short": "1.0"
   },
   "keywords": [
     "css",
@@ -15,29 +15,19 @@
     "web"
   ],
   "homepage": "https://getbootstrap.com/",
-  "author": "The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)",
+  "author": "The Bootstrap Authors, Sanusi Hassan (https://github.com/twbs/bootstrap/graphs/contributors)",
   "contributors": [
     "Twitter, Inc."
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/twbs/bootstrap.git"
+    "url": "https://github.com/Sanusihassan/custom-bootstrap.git"
   },
   "bugs": {
-    "url": "https://github.com/twbs/bootstrap/issues"
+    "url": "https://github.com/Sanusihassan/custom-bootstrap/issues"
   },
-  "funding": [
-    {
-      "type": "github",
-      "url": "https://github.com/sponsors/twbs"
-    },
-    {
-      "type": "opencollective",
-      "url": "https://opencollective.com/bootstrap"
-    }
-  ],
-  "main": "dist/js/bootstrap.js",
+  "main": "./scss/bootstrap.scss",
   "module": "dist/js/bootstrap.esm.js",
   "sass": "scss/bootstrap.scss",
   "style": "dist/css/bootstrap.css",
