@@ -1,6 +1,8 @@
-/*
-    The idea is to use sass placehoders instead of css classes
-*/
+/**!
+ * Custom-Bootstrap
+ * (c) 2022 - 2023 By Sanusi Hassan
+ * licance: MIT
+ */
 @import "mixins/banner";
 @include bsBanner("");
 
