@@ -27,10 +27,7 @@
   "bugs": {
     "url": "https://github.com/Sanusihassan/custom-bootstrap/issues"
   },
-  "main": "./scss/bootstrap.scss",
-  "module": "dist/js/bootstrap.esm.js",
-  "sass": "scss/bootstrap.scss",
-  "style": "dist/css/bootstrap.css",
+  "main": "scss/bootstrap.scss",
   "scripts": {
     "start": "npm-run-all --parallel watch docs-serve",
     "bundlewatch": "bundlewatch --config .bundlewatch.config.json",
