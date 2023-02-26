@@ -1,5 +1,6 @@
 @import "forms/labels";
 @import "forms/form-text";
+
 @import "forms/form-control";
 @import "forms/form-select";
 @import "forms/form-check";
@@ -7,3 +8,15 @@
 @import "forms/floating-labels";
 @import "forms/input-group";
 @import "forms/validation";
+
+@mixin forms {
+    @include labels;
+    @include form-text;
+    @include form-control;
+    @include form-select;
+    @include form-check;
+    @include form-range;
+    @include floating-labels;
+    @include input-group;
+    @include validation;
+}

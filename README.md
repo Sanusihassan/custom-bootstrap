@@ -6,7 +6,11 @@
 
 <h3 align="center">Custom Bootstrap</h3>
 
-## Usage
+<p align="center">
+Sleek, intuitive, and powerful front-end framework for faster and easier web development.
+</p>
+
+## Installation
 
 1. install cssmolecule
 
@@ -20,7 +24,7 @@ npm install cssmolecule
 npm install custom-bs
 ```
 
-3. use it your project
+### Usage
 
 - in your `main.jsx` or `main.tsx` or `main.js` file import the following:
 
@@ -31,15 +35,29 @@ import "custom-bs";
 import "./scss/main.scss";
 ```
 
+Alternatively you can also import the files in your sass.
+
+```scss
+@import "cssmolecule/main.scss";
+@import "custom-bs/scss/bootstrap.scss";
+```
+
 - use it like this
 
 ```scss
+// include what you want you want from the framework
+// for utilities
+@include api;
+// reboot/normalize
+@include reboot;
+// forms
+@include forms;
+// buttons
+@include buttons;
 .form {
+  // you can use extend, apply or class
   @include extend("form-inline py-3");
   // your custom styles
-  h1 {
-    @include extend("text-center text-capitalize");
-  }
 
   input,
   textarea {

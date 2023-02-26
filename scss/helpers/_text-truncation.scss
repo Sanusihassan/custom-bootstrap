@@ -1,7 +1,8 @@
 //
 // Text truncation
 //
-
-%text-truncate {
-  @include text-truncate();
+@mixin text-truncation {
+  %text-truncate {
+    @include text-truncate();
+  }
 }

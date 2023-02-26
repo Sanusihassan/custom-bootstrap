@@ -8,3 +8,16 @@
 @import "helpers/stretched-link";
 @import "helpers/text-truncation";
 @import "helpers/vr";
+
+@mixin helpers {
+    @include __clearfix;
+    @include color-bg;
+    @include colored-links;
+    @include ratio;
+    @include position;
+    @include stacks;
+    @include __visually-hidden;
+    @include stretched-link;
+    @include text-truncation;
+    @include vr;
+}

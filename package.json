@@ -1,9 +1,9 @@
 {
   "name": "custom-bs",
   "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "config": {
-    "version_short": "1.1"
+    "version_short": "1.2"
   },
   "keywords": [
     "css",
