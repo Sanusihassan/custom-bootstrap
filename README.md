@@ -46,10 +46,10 @@ Alternatively you can also import the files in your sass.
 
 ```scss
 // include what you want you want from the framework
-// for utilities
-@include api;
 // reboot/normalize
 @include reboot;
+// utilities
+@include api;
 // forms
 @include forms;
 // buttons
@@ -75,3 +75,9 @@ Alternatively you can also import the files in your sass.
   @include extend("form", ".");
 }
 ```
+
+### Youtube Video
+
+A youtube video explaining how to use it
+
+[![The Easiest Way Customize BootstrapCss Based Styles Without !important](http://i3.ytimg.com/vi/pBzzc7K9dZE/hqdefault.jpg)](https://youtu.be/pBzzc7K9dZE)
